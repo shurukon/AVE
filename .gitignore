@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+release/
+*.tsbuildinfo
+next-env.d.ts
+
+# Executables / binaries (code only — no distributed binaries)
+*.exe
+*.msi
+*.msix
+*.appx
+*.dll
+*.lib
+*.dylib
+*.so
+*.pdb
+*.wasm
+*.node
+electron-builder.yaml.cache
+
+# Portable package artifacts
+*Portable*
+*.zip
+*.7z
+*.tar.gz
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Prisma
+prisma/dev.db
+prisma/dev.db-journal
+
+# Logs / OS
+logs/
+*.log
+npm-debug.log*
+.npm
+.DS_Store
+Thumbs.db
+desktop.ini

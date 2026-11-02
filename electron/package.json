@@ -1,0 +1,70 @@
+{
+  "name": "palmier-pro-windows",
+  "version": "1.0.0",
+  "description": "Palmier Pro for Windows 10 — an AI-native video editor (Electron port of the macOS Swift app).",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development electron .",
+    "build:portable": "electron-builder --win portable",
+    "build:nsis": "electron-builder --win nsis",
+    "build:all": "electron-builder --win nsis portable",
+    "pack": "electron-builder --dir --win"
+  },
+  "build": {
+    "appId": "io.palmier.pro.windows",
+    "productName": "PalmierPro",
+    "copyright": "Copyright (C) 2026 Palmier, Inc.",
+    "directories": {
+      "output": "../release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "mcp-server/**/*",
+      "renderer/**/*",
+      "ffmpeg/**/*",
+      "icons/**/*",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,readme.md,readme}",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}"
+    ],
+    "extraResources": [
+      { "from": "../mcp-server", "to": "mcp-server" },
+      { "from": "icons", "to": "icons" }
+    ],
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "icon": "icons/icon.ico",
+      "artifactName": "PalmierPro-Windows-${version}-${arch}.${ext}",
+      "publisherName": "Palmier, Inc.",
+      "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Palmier Pro",
+      "license": "../LICENSE.txt",
+      "installerIcon": "icons/icon.ico",
+      "uninstallerIcon": "icons/icon.ico",
+      "installerHeaderIcon": "icons/icon.ico"
+    },
+    "portable": {
+      "artifactName": "PalmierPro-Windows-${version}-Portable.exe"
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.0",
+    "cross-env": "^7.0.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "GPL-3.0-only"
+}

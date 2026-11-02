@@ -1,0 +1,18 @@
+{
+  "name": "palmier-pro-mcp-server",
+  "version": "1.0.0",
+  "description": "Cross-platform MCP HTTP server for Palmier Pro for Windows. Speaks the same tool vocabulary as the macOS version (get_timeline, add_clips, add_texts, export_project, ...).",
+  "type": "module",
+  "main": "server.js",
+  "bin": {
+    "palmier-mcp-server": "server.js"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "GPL-3.0-only"
+}

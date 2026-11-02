@@ -1,19 +1,10 @@
-# Palmier Pro for Windows — MCP Tools (v2.1)
+# Palmier Pro for Windows — MCP Tools (v2.0)
 
-This document lists all 42 MCP tools exposed by the Palmier Pro MCP server at `http://127.0.0.1:19789/mcp`.
+This document lists all 41 MCP tools exposed by the Palmier Pro MCP server at `http://127.0.0.1:19789/mcp`.
 
 ## Comparison with macOS Original
 
-The macOS version of Palmier Pro exposes **40 tools** through its Swift MCP SDK. This Windows port exposes **42 tools** — **40 public tools matching the macOS original 100%**, plus **2 internal state-sync tools** (`_get_state` / `_set_state`) used by the Electron shell to keep the UI and MCP server in sync.
-
-| | macOS Original | Windows Port |
-|---|---|---|
-| Public tools | 40 | 40 (100% match) |
-| Internal tools | 0 | 2 (`_get_state`, `_set_state`) |
-| **Total** | **40** | **42** |
-
-### Missing from Windows: 0
-### Extra in Windows: 0 (beyond the 2 internal sync tools)
+The macOS version of Palmier Pro exposes **39 tools** through its Swift MCP SDK. This Windows port exposes **41 tools** (39 from macOS + 2 internal state-sync tools).
 
 ## Tool Categories
 
@@ -90,12 +81,11 @@ The macOS version of Palmier Pro exposes **40 tools** through its Swift MCP SDK.
 | `generate_audio` | Generate audio with AI (Lyria/MiniMax/ElevenLabs). |
 | `upscale_media` | Upscale media with AI (ByteDance/SeedVR). |
 
-### 10. Undo, Feedback & Skills (3 tools)
+### 10. Undo & Feedback (2 tools)
 | Tool | Description |
 |------|-------------|
 | `undo` | Undo last change (stub). |
 | `send_feedback` | Send bug/feature reports to Palmier team. |
-| `read_skill` | Load the full instructions for one of the skills listed under # Skills in your system prompt. Skills live as SKILL.md files under `~/.palmier/skills/<id>/`. |
 
 ### 11. Internal (2 tools)
 | Tool | Description |
